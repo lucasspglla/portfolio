@@ -10,6 +10,7 @@ body {
     --shadow-color: gray;
     --border-color: rgb(185, 185, 185);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fieldset, legend, button {
@@ -117,10 +118,10 @@ section {
     border-radius: 50%;
     position: absolute;
     top: 70%;
-    animation: aparecer 1.2s .4s both ease-in-out;
+    animation: aparecer1 1.2s .4s both ease-in-out;
 }
 
-@keyframes aparecer {
+@keyframes aparecer1 {
     from {
         opacity: 0;
         transform: translateY(-12%);
@@ -143,7 +144,7 @@ section {
 
 .h2__title {
     font-size: 2.1rem;
-    animation: aparecer 1s 3.2s both ease-in-out
+    animation: aparecer 1s 3.2s both ease-in-out;
 }
 
 h1 {
@@ -154,6 +155,17 @@ h1 {
 
 .description__container {
     margin-top: 1rem;
+    animation: aparecer2 1s 3.65s both ease-in-out;
+}
+
+@keyframes aparecer2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .secondary__title__container, .title__container {
@@ -377,8 +389,8 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 90dvh;
     align-items: center;
+    margin-bottom: 16rem;
 }
 
 .contact__section__form {
@@ -403,10 +415,11 @@ fieldset {
 
 
 .form__button {
-    background-color: transparent;
+    background-color: var(--box-color);
     padding: .4rem;
     width: 75%;
     border-radius: 10px;
+    color: var(--font-color);
 }
 
 .button__container {
@@ -488,6 +501,21 @@ fieldset {
 
 
 
+/* ----- HEADER SECTION ----- */
+
+.footer {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    background-color: var(--box-color);
+}
+
+.footer__p {
+    color: var(--font-color);
+    font-size: .8rem;
+}
+
+
 /* ----- GSAP CSS ----- */
 
 .about1, .about2, .about3, .about4, .about5, .about6, .about7, .about__section__title, .skills__section__title, .projects__section__title, .project__container, .project__container2, .contact__section__h2 {
@@ -508,5 +536,91 @@ fieldset {
 
 .contact__section__form {
     opacity: 0;
-    transform: scale(.8);
+    transform: scale(.8) translateY(50px);
+
+}
+
+
+
+/* ----- TABLET MEDIA QUERIES ----- */
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    /* ----- PRESENTATION QUERIES SECTION ----- */
+
+
+    h1 {
+        font-size: 3.8rem;
+    }
+
+    .h2__title {
+        font-size: 3rem;
+        animation: aparecer1 1s 3s both ease-in-out;
+    }
+
+    .p__title {
+        font-size: 1.5rem;
+    }
+
+        /* ----- ABOUT QUERIES SECTION ----- */
+
+
+    .about__section__description__container {
+        max-width: 80%;
+    }
+
+    p {
+        font-size: 1.4rem;
+        letter-spacing: 1.1px;
+    }
+
+    /* ----- SKILLS QUERIES SECTION ----- */
+
+
+    .html__container img, .css__container img, .js__container img {
+        width: 40%;
+    }
+    
+    .responsive-design__container img {
+        width: 55%;
+    }
+    
+    .html__container, .css__container, .js__container, .responsive-design__container {
+        width: 50%;
+    }
+
+    .about__section__title, .skills__section__title, .contact__section__h2, .projects__section__title {
+        font-size: 3.6rem;
+    }
+
+    /* ----- PROJECTS QUERIES SECTION ----- */
+
+
+    .project__container, .project__container2 {
+        width: 60%;
+        height: 30%;
+    }
+
+    /* ----- CONTACT QUERIES SECTION ----- */
+
+
+    .contact__section__form {
+        width: 75%;
+    }
+
+    fieldset {
+        padding: 1.5rem;
+    }
+
+    .form__container label {
+        font-size: 1.2rem;
+    }
+}
+
+/* ----- PC MEDIA QUERIES ----- */
+
+
+
+@media screen and (min-width: 1025px) {
+    
 }

@@ -7,7 +7,7 @@ gsap.to(".about__section__title", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about__section__title",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -19,7 +19,7 @@ gsap.to(".about1", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about1",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -31,7 +31,7 @@ gsap.to(".about2", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about2",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -43,7 +43,7 @@ gsap.to(".about3", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about3",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -55,7 +55,7 @@ gsap.to(".about4", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about4",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -67,7 +67,7 @@ gsap.to(".about5", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about5",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -79,7 +79,7 @@ gsap.to(".about6", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about6",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -91,7 +91,7 @@ gsap.to(".about7", {
     ease: "power2.out",
     scrollTrigger: {
         trigger: ".about7",
-        start: "top 90%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse"
     }
 });
@@ -212,6 +212,7 @@ gsap.to(".contact__section__h2", {
 gsap.to(".contact__section__form", {
     opacity: 1,
     scale: 1,
+    y: 0,
     duration: 1.5,
     ease: "power2.out",
     scrollTrigger: {
