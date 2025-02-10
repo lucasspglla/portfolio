@@ -39,6 +39,7 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
 .checkbox-button {
     font-size: 3.5rem;
     color: var(--font-color);
+    cursor: pointer;
 }
 
 .checkbox {
@@ -46,15 +47,19 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
 }
 
 .header__ul {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-:has(.checkbox:checked) {
-    .header__ul {
-        display: flex;
-    }
+
+.checkbox:checked ~ .header__ul {
+    max-height: 500px;
+    opacity: 1;
 }
 
 .header__li {
@@ -87,8 +92,8 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
 
 section {
     margin-bottom: 8rem;
+    scroll-margin-top: 4rem;
 }
-
 
 
 /* ----- PRESENTATION SECTION ----- */
@@ -144,7 +149,7 @@ section {
 
 .h2__title {
     font-size: 2.1rem;
-    animation: aparecer 1s 3.2s both ease-in-out;
+    animation: aparecer1 1s 3.2s both ease-in-out;
 }
 
 h1 {
@@ -260,7 +265,7 @@ h1 {
     box-shadow: 0 0 10px var(--shadow-color);
 }
 
-.skills__section h2 {
+.skills__section__title {
     font-size: 3.2rem;
 }
 
@@ -301,7 +306,6 @@ h1 {
     background-position: center;
     background-size: cover;
     border-radius: 25px;
-    transition: scale .5s ease-in-out;
     margin-top: 2rem;
 
 }
@@ -326,10 +330,6 @@ h1 {
     .project__wrapper {
         opacity: 1;
         visibility: visible;
-    }
-
-    .project__container {
-        scale: 1.1;
     }
 }
 
@@ -363,7 +363,6 @@ h1 {
         background-size: cover;
         border-radius: 25px;
         margin-top: 8rem;
-        transition: scale .5s ease-in-out;
 }
 
 .projects__section__title {
@@ -375,15 +374,11 @@ h1 {
         opacity: 1;
         visibility: visible;
     }
-
-    .project__container2 {
-        scale: 1.1;
-    }
 }
 
 
 
-/* ----- FORM SECTION ----- */
+/* ----- CONTACT SECTION ----- */
 
 .contact__section {
     display: flex;
@@ -541,10 +536,30 @@ fieldset {
 }
 
 
+/* ----- SPECIAL MEDIA QUERIES ----- */
+
+@media screen and (max-width: 310px) {
+
+    .html__container h2, .css__container h2, .js__container h2, .responsive-design__container h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .h2__title {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
 
 /* ----- TABLET MEDIA QUERIES ----- */
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 601px) {
 
     /* ----- PRESENTATION QUERIES SECTION ----- */
 
@@ -560,6 +575,10 @@ fieldset {
 
     .p__title {
         font-size: 1.5rem;
+    }
+
+    .titles__wrapper {
+        margin-top: 2rem;
     }
 
         /* ----- ABOUT QUERIES SECTION ----- */
@@ -617,10 +636,145 @@ fieldset {
     }
 }
 
+
+
 /* ----- PC MEDIA QUERIES ----- */
 
-
-
 @media screen and (min-width: 1025px) {
+
+    /* ----- PRESENTATION QUERIES SECTION ----- */
+
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .h2__title {
+        font-size: 2.2rem;
+    }
+
+    /* ----- GENERAL QUERIES ----- */
+
+    .about__section__title, .skills__section__title, .contact__section__h2, .projects__section__title {
+        font-size: 4.5rem;
+    }
+
+    /* ----- HEADER QUERIES ----- */
+
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 65%;
+    }
+
+    .header__ul :first-child {
+        margin-top: 1.3rem;
+    }
+
+    .button__wrapper {
+        display: none
+    }
+
+    .header__a {
+        font-size: 1.2rem;
+    }
+
+    .header__li {
+        margin: 1.3rem .8rem;
+    }
+
+    /* ----- ABOUT QUERIES SECTION ----- */
+
+
+    p {
+        font-size: 1.3rem;
+        letter-spacing: 1.3px;
+    }
+
+    .about__section__description__container {
+        max-width: 50%;
+    }
+
+    /* ----- SKILLS QUERIES SECTION ----- */
+
+
+    .html__container, .css__container, .js__container, .responsive-design__container {
+        width: 40%;
+    }
     
+    .about__section__title, .skills__section__title, .contact__section__h2, .projects__section__title {
+        font-size: 3.8rem;
+    }
+
+
+    /* ----- PROJECTS QUERIES SECTION ----- */
+
+
+    .project__container, .project__container2 {
+        width: 40%;
+        height: 40%;
+    }
+
+    .html__container img, .css__container img, .js__container img {
+        width: 30%;
+    }
+    
+    .responsive-design__container img {
+        width: 45%;
+    }
+
+    :has(.project-checkbox:hover) {
+        .project__wrapper {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    :has(.project-checkbox2:hover) {
+        .project__wrapper2 {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    /* ----- CONTACT QUERIES SECTION ----- */
+
+
+    .contact__section__form {
+        width: 40%;
+    }
+
+    fieldset {
+        padding: 1.1rem;
+    }
+
+    .form__container label {
+        font-size: 1.1rem;
+    }
+
+    .name, .lastname, .email, .message {
+        padding: .7rem;
+    }
+
+    legend {
+        font-size: 1.1rem;
+    }
+
+    .form__button {
+        padding: .75rem;
+        width: 60%;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
 }
+
