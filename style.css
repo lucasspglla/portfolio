@@ -18,6 +18,9 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
     padding: 0;
 }
 
+img {
+    visibility: visible !important;
+}
 
 
 /* ----- HEADER SECTION ----- */
@@ -675,6 +678,8 @@ fieldset {
         align-items: center;
         justify-content: space-around;
         width: 65%;
+        max-height: 500px;
+        opacity: 1;
     }
 
     .header__ul :first-child {
