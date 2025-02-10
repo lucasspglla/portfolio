@@ -75,67 +75,67 @@
                 About
             </h2>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about1">
             <p class="about__section__description about__section__description1">
                 I'm a passionate Front-End Developer with experience in building responsive and visually appealing websites.
             </p>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about2">
             <p class="about__section__description about__section__description2">
                 I specialize in <b class="html">HTML</b>, <b class="css">CSS</b>, and <b class="js">JavaScript</b>, ensuring that every project I work on is user-friendly, interactive, and well-optimized for all devices.
             </p>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about3">
             <p class="about__section__description about__section__description2">
                 My focus is on creating seamless user experiences and crafting clean, maintainable code.
             </p>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about4">
             <p class="about__section__description about__section__description3">
                 I've developed various static and dynamic web pages, always paying attention to detail and functionality. 
             </p>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about5">
             <p class="about__section__description about__section__description3">
                 I'm continuously learning and expanding my skills to stay up-to-date with the latest web technologies.
             </p>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about6">
             <p class="about__section__description about__section__description3">
                 Whether it's designing from scratch or improving existing websites, I bring creativity, technical skills, and dedication to every project.
             </p>
         </div>
-        <div class="about__section__description__container">
+        <div class="about__section__description__container about7">
             <p class="about__section__description about__section__description4">
                 Feel free to explore my work and get in touch!
             </p>
         </div>
     </section>
     <section class="skills__section">
-        <h2>
+        <h2 class="skills__section__title">
             Skills
         </h2>
         <div class="html__container">
             <img src="images/skills/html-image.png" alt="html-image">
-            <h2>
+            <h2 class="html__title">
                 HTML
             </h2>
         </div>
         <div class="css__container">
             <img src="images/skills/css-image.png" alt="css-image">
-            <h2>
+            <h2 class="css__title">
                 CSS
             </h2>
         </div>
         <div class="js__container">
             <img src="images/skills/javascript-image.png" alt="javascript-image">
-            <h2>
+            <h2 class="js__title">
                 JavaScript
             </h2>
         </div>
         <div class="responsive-design__container">
             <img src="images/skills/responsive-design.png" alt="responsive-design-image">
-            <h2>
+            <h2 class="responsive-design__title">
                 Responsive design
             </h2>
         </div>
@@ -145,7 +145,7 @@
             Projects
         </h2>
             <div class="project__container">
-                <label class="label-checkbox">
+                <label class="label-checkbox label-checkbox1">
                     <input type="checkbox" class="project-checkbox">
                     <div class="project__wrapper">
                         <div class="view__code">
@@ -182,37 +182,44 @@
     <section class="contact__section">
         <div class="contact__section__title">
             <h2 class="contact__section__h2">
-                Contact me
+                Contact
             </h2>
         </div>
-        <form class="contact__section__form">
+        <form class="contact__section__form" action="https://formsubmit.co/7c5d52f6a5245fec251ac7b6d4d84ca8" method="POST">
             <fieldset class="inputs__fieldset">
                 <legend>Tu Información</legend>
                 
                 <div class="name__container form__container">
+                    <input type="text" class="name" id="name" name="name" required>
                     <label for="name">Name</label>
-                    <input type="text" class="name" id="name" required>
                 </div>
 
                 <div class="lastname__container form__container">
+                    <input type="text" class="lastname" id="lastname" name="lastname" required>
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="lastname" id="lastname" required>
                 </div>
-
                 <div class="email__container form__container">
+                    <input type="email" class="email" id="email" name="email" placeholder="" required>
                     <label for="email">E-mail</label>
-                    <input type="email" class="email" id="email" required>
                 </div>
 
                 <div class="message__container form__container">
+                    <textarea name="message" id="message" class="message" required></textarea>
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" required></textarea>
                 </div>
                 <div class="button__container form__container">
                     <button class="form__button">Send</button>
                 </div>
             </fieldset>
+
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+            <input type="hidden" name="_captcha" value="false">
         </form>
     </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@ body {
     --font-color: ghostwhite;
     --box-color: rgb(50, 50, 50);
     --shadow-color: gray;
+    --border-color: rgb(185, 185, 185);
     overflow-x: hidden;
 }
 
@@ -81,11 +82,20 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
 
 
 
+/* ----- ALL SECTIONS ----- */
+
+section {
+    margin-bottom: 8rem;
+}
+
+
+
 /* ----- PRESENTATION SECTION ----- */
 
 .presentation__section {
     width: 100%;
     height: 100dvh;
+    margin-bottom: 0;
 }
 
 .background {
@@ -107,6 +117,18 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
     border-radius: 50%;
     position: absolute;
     top: 70%;
+    animation: aparecer 1.2s .4s both ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-12%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .titles__wrapper {
@@ -118,17 +140,38 @@ body, html, div, ul, li, span, label, a, h1, h2, h3, h4, h5, p, i, input, fields
     align-items: center;
 }
 
+
 .h2__title {
     font-size: 2.1rem;
+    animation: aparecer 1s 3.2s both ease-in-out
 }
 
 h1 {
     font-size: 2.25rem;
     text-align: center;
+    animation: aparecer-texto 3s 1.2s both cubic-bezier(0.25, 1, 0.5, 1)
 }
 
 .description__container {
     margin-top: 1rem;
+}
+
+.secondary__title__container, .title__container {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+
+@keyframes aparecer-texto {
+    from {
+        opacity: 0;
+        transform: translateX(-105%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
@@ -142,7 +185,6 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 8rem;
 }
 
 .about__section__title {
@@ -154,7 +196,7 @@ h1 {
     max-width: 95%;
     background-color: rgb(50, 50, 50);
     border-radius: 20px;
-    margin: 1rem 0;
+    margin: 2rem 0;
     padding: 1rem;
     color: var(--font-color);
     line-height: 1.45;
@@ -178,10 +220,12 @@ h1 {
 /* ----- SKILLS SECTION ----- */
 
 .skills__section {
+    max-width: 100dvw;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .html__container img, .css__container img, .js__container img {
@@ -197,7 +241,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 75%;
-    margin: 4rem 0;
+    margin: 2.5rem 0;
     background-color: var(--box-color);
     padding: 1.5rem;
     border-radius: 25px;
@@ -311,7 +355,7 @@ h1 {
 }
 
 .projects__section__title {
-    font-size: 2.3rem;
+    font-size: 3.2rem;
 }
 
 :has(.project-checkbox2:checked) {
@@ -333,7 +377,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100dvh;
+    min-height: 90dvh;
     align-items: center;
 }
 
@@ -347,6 +391,8 @@ fieldset {
     display: flex;
     width: 95%;
     flex-direction: column;
+    border: 1px solid var(--border-color);
+    padding: .2rem;
 }
 
 .form__container {
@@ -355,10 +401,6 @@ fieldset {
     margin: .5rem .2rem;
 }
 
-.name, .lastname, .email {
-    padding: .35rem;
-    border-radius: 15px;
-}
 
 .form__button {
     background-color: transparent;
@@ -371,6 +413,100 @@ fieldset {
     align-items: center;
 }
 
+.lastname__container, .name__container, .email__container, .message__container {
+    outline: none;
+    position: relative;
+}
+
 .form__container label {
     font-size: .8rem;
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    z-index: 300000000;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+.name, .lastname, .email, .message {
+    padding: .8rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#message {
+    font-family: inherit;
+    height: 120px;
+}
+
+.message__container {
+    height: fit-content;
+}
+
+.message__container label {
+    top: 8%;
+    left: 2%;
+    transform: translateY(0);
+}
+
+.name:focus ~ label, 
+.lastname:focus ~ label, 
+.email:focus ~ label, 
+.name:valid ~ label, 
+.lastname:valid ~ label, 
+.email:valid ~ label, 
+.email:not(:placeholder-shown) ~ label {
+    top: 0;
+    left: 3%;
+    padding: 0 .5rem;
+    background-color: white;
+    font-size: .8rem;
+}
+
+.message:valid ~ label,
+.message:focus ~ label {
+    top: -7%;
+    left: 3%;
+    padding: 0 .5rem;
+    background-color: white;
+    font-size: .8rem;
+}
+
+.message__container:focus-within label {
+    top: -7%;
+    left: 3%;
+    padding: 0 .5rem;
+    background-color: white;
+    font-size: .8rem;
+}
+
+.contact__section__h2 {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+/* ----- GSAP CSS ----- */
+
+.about1, .about2, .about3, .about4, .about5, .about6, .about7, .about__section__title, .skills__section__title, .projects__section__title, .project__container, .project__container2, .contact__section__h2 {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.js__container, .html__container {
+    opacity: 0;
+    transform: translateX(-120%);
+}
+
+.css__container, .responsive-design__container {
+    opacity: 0;
+    transform: translateX(120%);
+    position: relative;
+}
+
+.contact__section__form {
+    opacity: 0;
+    transform: scale(.8);
 }
