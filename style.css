@@ -463,7 +463,7 @@ fieldset {
 .email:focus ~ label, 
 .name:valid ~ label, 
 .lastname:valid ~ label, 
-.email:valid ~ label, 
+.email:focus ~ label, 
 .email:not(:placeholder-shown) ~ label {
     top: 0;
     left: 3%;
