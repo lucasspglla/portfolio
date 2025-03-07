@@ -197,6 +197,18 @@ gsap.to(".project__container2", {
     }
 });
 
+gsap.to(".project__container3", {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".project__container3",
+        start: "top 75%",
+        toggleActions: "play reverse play reverse"
+    }
+});
+
 gsap.to(".contact__section__h2", {
     opacity: 1,
     y: 0,
